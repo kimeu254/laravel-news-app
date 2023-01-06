@@ -19,8 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('region_id')->index();
             $table->unsignedBigInteger('category_id')->index();
             $table->string('image');
+            $table->string('caption')->nullable();
             $table->longText('story');
             $table->string('image_one')->nullable();
+            $table->string('caption_one')->nullable();
             $table->longText('story_one')->nullable();
             $table->string('url')->nullable();
             $table->longText('story_two')->nullable();

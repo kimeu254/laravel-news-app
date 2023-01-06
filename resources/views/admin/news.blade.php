@@ -79,6 +79,9 @@
                     <img id="preview" src="https://www.riobeauty.co.uk/images/product_image_not_found.gif" alt="" style="max-height: 250px;">
                 </div>
                 <div class="mb-4">
+                    <input type="text" name="caption" id="caption" class="form-control" placeholder="Enter caption here">
+                </div>
+                <div class="mb-4">
                     <textarea name="story" id="story" class="form-control" placeholder="Type your story here..." style="height: 100px" required></textarea>
                 </div>
                 <div>
@@ -89,6 +92,9 @@
                 </div>
                 <div class="mb-4">
                     <img id="preview-one" src="https://www.riobeauty.co.uk/images/product_image_not_found.gif" alt="" style="max-height: 250px;">
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="caption_one" id="caption_one" class="form-control" placeholder="Enter caption here">
                 </div>
                 <div class="mb-4">
                     <textarea name="story_one" id="story_one" class="form-control" placeholder="Type your story here..." style="height: 100px"></textarea>
@@ -246,9 +252,11 @@
                 $('[name="id"]').val(data[0].id);
                 $('[name="headline"]').val(data[0].headline);
                 $('[name="story"]').val(data[0].story);
+                $('[name="caption"]').val(data[0].caption);
                 $('[name="category_id"]').val(data[0].category_id);
                 $('[name="region_id"]').val(data[0].region_id);
                 $('[name="story_one"]').val(data[0].story_one);
+                $('[name="caption_one"]').val(data[0].caption_one);
                 $('[name="url"]').val(data[0].url);
                 $('[name="story_two"]').val(data[0].story_two);
                 $('#preview').attr('src', "/storage/posts/" + img);
@@ -280,9 +288,11 @@
         if(save_method == 'add')
         {
             var headline = $('#headline').val();
+            var caption = $('#caption').val();
             var story = $('#story').val();
             var story_one = $('#story_one').val();
             var url = $('#url').val();
+            var caption_one = $('#caption_one').val();
             var story_two = $('#story_two').val();
             var category_id = $('#category_id').val();
             var region_id = $('#region_id').val();
@@ -293,7 +303,9 @@
             formData.append('headline', headline);
             formData.append('region_id', region_id);
             formData.append('category_id', category_id);
+            formData.append('caption', caption);
             formData.append('story', story);
+            formData.append('caption_one', caption_one);
             formData.append('story_one', story_one);
             formData.append('url', url);
             formData.append('story_two', story_two);
@@ -445,6 +457,8 @@
         $('#addNews').submit(function (e) {
             e.preventDefault();
             var headline = $('#headline').val();
+            var caption = $('#caption').val();
+            var caption_one = $('#caption_one').val();
             var story = $('#story').val();
             var story_one = $('#story_one').val();
             var url = $('#url').val();
@@ -457,6 +471,8 @@
             formData.append('image_one', image_one);
             formData.append('headline', headline);
             formData.append('region_id', region_id);
+            formData.append('caption', caption);
+            formData.append('caption_one', caption_one);
             formData.append('category_id', category_id);
             formData.append('story', story);
             formData.append('story_one', story_one);
@@ -539,6 +555,5 @@
         }
 
 </script>
-
 
 @endsection

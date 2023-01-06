@@ -12,9 +12,11 @@ class News extends Model
     protected $fillable = [
         'headline',
         'image',
+        'caption',
         'story',
         'posted_by',
         'image_one',
+        'caption_one',
         'story_one',
         'url',
         'story_two',

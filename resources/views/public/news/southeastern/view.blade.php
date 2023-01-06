@@ -27,6 +27,9 @@
                     <div class="con">
                         <img src="/storage/posts/{{$southeastern->image}}" class="img-fluid w-100" style="height: 500px;">
                     </div>
+                    <div>
+                        <figcaption class="figure-caption text-end px-2" style="font-style: italic">{{$southeastern->caption}}</figcaption>
+                    </div>
                 </div>
                 <div class="py-3">
                     <p class="h6" style="white-space: pre-wrap;">{{$southeastern->story}}</p>
@@ -34,6 +37,9 @@
                 <div class="py-3">
                     <div class="con">
                         <img src="/storage/posts/{{$southeastern->image_one}}" class="img-fluid w-100" style="height: 500px;">
+                    </div>
+                    <div>
+                        <figcaption class="figure-caption text-end px-2" style="font-style: italic">{{$southeastern->caption_one}}</figcaption>
                     </div>
                 </div>
                 <div class="py-3">

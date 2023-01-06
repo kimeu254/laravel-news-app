@@ -54,10 +54,12 @@ class NewsController extends Controller
         $data = [
             'headline'=>$request->headline,
             'image'=>$filenames[0],
+            'caption'=>$request->caption,
             'story'=>$request->story,
             'region_id'=>$request->region_id,
             'category_id'=>$request->category_id,
             'image_one'=>$filenames[1],
+            'caption_one'=>$request->caption_one,
             'story_one'=>$request->story_one,
             'url'=>$request->url,
             'story_two'=>$request->story_two,
@@ -110,9 +112,11 @@ class NewsController extends Controller
         $edit = News::where('id', $id)
             ->update([
                 'headline' =>  $request->headline,
+                'caption' =>  $request->caption,
                 'story' =>  $request->story,
                 'region_id' => $request->region_id,
                 'category_id' => $request->category_id,
+                'caption_one' =>  $request->caption_one,
                 'story_one' =>  $request->story_one,
                 'url' =>  $request->url,
                 'story_two' =>  $request->story_two,
